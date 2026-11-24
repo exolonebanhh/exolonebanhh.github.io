@@ -1,0 +1,205 @@
+/* ============================================================
+   PROJECT DOCUMENTATION PAGES
+   Memakai token & utility dari style.css (:root, .label, .display,
+   .section--*, .btn, .grain) + komposisi khusus halaman dokumentasi.
+   ============================================================ */
+
+.doc-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  height: var(--nav-h);
+  padding: 0 var(--pad-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: color .35s ease;
+}
+
+body[data-navtext="ink"]   .doc-nav { color: var(--ink); }
+body[data-navtext="cream"] .doc-nav { color: var(--cream); }
+
+.doc-back {
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .8;
+  transition: opacity .25s ease;
+}
+
+.doc-back:hover { opacity: 1; }
+
+/* ---------- hero ---------- */
+
+.doc-hero { justify-content: flex-end; gap: 1.5rem; }
+
+.doc-hero .display--md { margin-top: .1em; }
+
+.doc-tag {
+  margin: 0;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 500;
+  max-width: 40ch;
+}
+
+.doc-tag em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.section--red .doc-tag em { color: var(--ink); }
+.section--cream .doc-tag em,
+.section--dark .doc-tag em { color: var(--red); }
+
+/* ---------- meta chips ---------- */
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: 0;
+}
+
+.doc-meta span {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  padding: .5em 1.1em;
+  opacity: .9;
+}
+
+/* ---------- isi dokumentasi ---------- */
+
+.doc-body {
+  min-height: auto;
+  padding-top: clamp(3rem, 8vh, 6rem);
+  padding-bottom: clamp(3rem, 8vh, 6rem);
+}
+
+.doc-body h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 2.6em 0 1em;
+}
+
+.doc-body h2:first-of-type { margin-top: 0; }
+
+.doc-body p {
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  line-height: 1.75;
+  margin: 0 0 1.2em;
+}
+
+.doc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 72ch;
+}
+
+.doc-list li {
+  padding: 1rem 0 1rem 2.2rem;
+  border-top: 1px solid var(--line);
+  position: relative;
+  line-height: 1.6;
+}
+
+.doc-list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--red);
+}
+
+/* ---------- tech chips ---------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.chips span {
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 999px;
+  padding: .55em 1.2em;
+}
+
+.section--cream .chips span { background: var(--ink); }
+.section--dark .chips span { background: rgba(242, 237, 226, .12); }
+
+/* ---------- outcome callout ---------- */
+
+.doc-outcome {
+  margin-top: 2rem;
+  padding: 1.6rem 1.8rem;
+  border-left: 4px solid var(--red);
+  background: rgba(255, 61, 28, .08);
+  max-width: 60ch;
+}
+
+.doc-outcome strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.4em;
+  letter-spacing: .02em;
+}
+
+/* ---------- prev / next ---------- */
+
+.doc-next {
+  min-height: auto;
+  padding-top: clamp(2.5rem, 6vh, 4rem);
+  padding-bottom: clamp(2.5rem, 6vh, 4rem);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.doc-next a {
+  display: inline-flex;
+  flex-direction: column;
+  gap: .2rem;
+  transition: transform .25s ease;
+}
+
+.doc-next a:hover { transform: translateY(-3px); }
+
+.doc-next .label { opacity: .7; }
+
+.doc-next .doc-next-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.doc-next .doc-next-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  text-transform: none;
+  color: var(--red);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 720px) {
+  .doc-hero .display--md { font-size: clamp(2.8rem, 13vw, 6rem); }
+  .doc-list li { padding-left: 1.6rem; }
+}

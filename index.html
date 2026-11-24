@@ -12,10 +12,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@1,500;1,600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Lenis smooth scroll (CDN). Kalau CDN gagal, situs tetap berfungsi normal tanpa efek. -->
+  <script defer src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script defer src="effects.js"></script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-navtext="ink">
+
+  <!-- Custom cursor (desktop dengan mouse saja) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
 
   <!-- Lapisan grain/noise di atas segalanya (murni dekoratif) -->
   <div class="grain" aria-hidden="true"></div>
@@ -42,12 +49,13 @@
       </p>
 
       <!-- Wordmark: nama dipangkas biar kuat secara visual. Nama lengkap ada di title & footer -->
-      <h1 class="display hero__title" data-reveal data-delay="80">
-        VICKY<br />WINATA
+      <h1 class="display hero__title">
+        <span class="line"><span class="line-inner">VICKY</span></span>
+        <span class="line"><span class="line-inner">WINATA</span></span>
       </h1>
 
-      <!-- Objek "chrome" mengambang — bisa diganti embed Spline (lihat PANDUAN.md) -->
-      <div class="orb" aria-hidden="true"></div>
+      <!-- Objek "chrome" mengambang — parallax mengikuti mouse (effects.js) -->
+      <div class="orb-wrap" aria-hidden="true"><div class="orb"></div></div>
 
       <div class="hero__foot">
         <p class="hero__tag" data-reveal data-delay="160">

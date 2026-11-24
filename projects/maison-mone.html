@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maison Mone — Vicky Winata Phan</title>
-  <meta name="description" content="Interactive front-end prototype for a makeup artist marketplace — React 19, Tailwind CSS, branded design system, packaged as a single standalone HTML demo." />
+  <meta name="description" content="Maison Mone — makeup artist booking platform prototype. Presales engineering: 27-item backlog audit, 3 critical bug fixes, customer service module, and standalone single-file React demos." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23FF3D1C'>✦</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,9 +24,9 @@
     <section class="section section--red doc-hero">
       <p class="label">03 ✦ Front-End UI ✦ 2026</p>
       <h1 class="display display--md">Maison<br />Mone</h1>
-      <p class="doc-tag">A marketplace for professional makeup artists — <em>designed for demos, built to be touched.</em></p>
+      <p class="doc-tag">A makeup artist booking platform — <em>presales engineering: audit, fix, demo.</em></p>
       <div class="doc-meta">
-        <span>Role — Front-End Developer</span>
+        <span>Role — Presales Engineer</span>
         <span>Year — 2026</span>
         <span>Type — Interactive Prototype</span>
       </div>
@@ -36,43 +36,76 @@
     <section class="section section--cream doc-body">
       <h2>Overview</h2>
       <p>
-        An interactive front-end prototype for a marketplace connecting
-        clients with professional makeup artists (MUAs) for weddings, parties,
-        and photoshoots. The prototype features verified MUA profiles,
-        scheduling capabilities, and a customer service module — designed so
-        stakeholders could feel the product before a single backend was built.
+        Maison Mone is a booking &amp; management platform connecting clients
+        with professional makeup artists (MUAs) for weddings, parties, and
+        photoshoots. As Presales Engineer I took an auto-generated Figma Make
+        prototype and turned it into a credible, demoable product — auditing
+        it against the consultant backlog, fixing critical bugs, extending it
+        with new features, and packaging the result into standalone demos
+        that run anywhere.
       </p>
 
-      <h2>Design System</h2>
+      <h2>Backlog Audit</h2>
+      <p>
+        Audited the source code against a 27-item consultant product backlog,
+        categorizing every item with file-and-line evidence:
+      </p>
       <ul class="doc-list">
-        <li>Responsive interface using a mobile-first approach with Tailwind CSS.</li>
-        <li>Custom branded color palette — rose/pink #d0356f paired with warm cream #fdf8f5.</li>
-        <li>Google Fonts typography: Poppins, Quicksand, and Great Vibes.</li>
-        <li>CSS micro-animations, including fadeInUp, scaleIn, and petal-drift.</li>
+        <li>3 items meeting acceptance criteria, 10 partially built, 7 not built at all, 6 pure documents, 1 mixed.</li>
+        <li>Core MVP focus: which of the 10 flagged items blocked a credible demo — and which could wait.</li>
+        <li>Delivered as a full audit report comparing backlog expectations against actual prototype behavior.</li>
       </ul>
 
-      <h2>Key Features</h2>
+      <h2>Critical Bug Fixes</h2>
       <ul class="doc-list">
-        <li>Verified MUA profiles with portfolio presentation.</li>
-        <li>Scheduling capabilities for bookings across event types.</li>
-        <li>Integrated customer service module.</li>
+        <li>Fixed a stuck settlement flow that dead-ended MUA payouts.</li>
+        <li>Fixed inconsistent down-payment (DP) amounts across screens.</li>
+        <li>Fixed chat opening the wrong MUA conversation.</li>
+        <li>Shipped as a reviewable patch: 8 files, +395 / −31 lines, applied to a clean checkout of the original source.</li>
+      </ul>
+
+      <h2>Customer Service Module</h2>
+      <p>
+        Designed and built a customer service feature where the CS authority
+        boundary is enforced at the interface level, not just by policy text.
+      </p>
+      <ul class="doc-list">
+        <li>Two new screens: customer Help Center (ticket categories, tracking) and a CS Console (ticket queue + actions).</li>
+        <li>Three authority tiers — full authority, mediation &amp; escalation, and out-of-scope — defined in one config file (<code>csScope.ts</code>) as the single source of truth.</li>
+        <li>Out-of-scope categories render no action buttons at all: "why can't CS refund off-platform payments?" is answered in the code.</li>
+      </ul>
+
+      <h2>Core Prototype Features</h2>
+      <ul class="doc-list">
+        <li>Booking flow with down payments, escrow, and two-way chat between customers and MUAs.</li>
+        <li>Separate dashboards for customers and MUAs, each screen reachable via two-way hash routing (<code>#/chat</code>, <code>#/mua-dashboard</code>, …).</li>
+        <li>Branded design system: rose/pink #d0356f + warm cream #fdf8f5, Poppins &amp; Quicksand typography, CSS micro-animations.</li>
       </ul>
 
       <h2>Clever Detail</h2>
       <p>
-        Bundled the React 19 application, styling, and Base64-encoded image
-        assets into a <strong>single standalone HTML prototype</strong> — the
-        whole product experience shipped as one file that runs anywhere,
-        built specifically to facilitate client demonstrations and
-        stakeholder testing.
+        Bundled the React 19 application, Tailwind styles, and Base64-encoded
+        image assets into <strong>single standalone HTML files (≈2.1&nbsp;MB
+        each)</strong> — one stable demo for presentations and one experimental
+        build with the CS module. Both run offline from a double-click, built
+        specifically for client demonstrations and stakeholder testing.
       </p>
+
+      <div class="doc-outcome">
+        <strong>Honest scope:</strong> this is a presales prototype — there is
+        no backend yet, and data resets on refresh. The value delivered was
+        certainty: stakeholders saw exactly what the product could do, what it
+        couldn't yet, and what building it would take.
+      </div>
 
       <h2>Tech Stack</h2>
       <div class="chips">
         <span>React 19</span>
-        <span>Tailwind CSS</span>
-        <span>HTML5</span>
-        <span>CSS3</span>
+        <span>Vite 8</span>
+        <span>Tailwind CSS v4</span>
+        <span>TypeScript 5.7</span>
+        <span>3,338 LOC</span>
+        <span>Figma Make (origin)</span>
       </div>
     </section>
 

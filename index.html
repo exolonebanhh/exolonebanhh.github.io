@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vicky Winata Phan — Portfolio</title>
+  <meta name="description" content="Vicky Winata Phan — Information Systems student. Digital system analyst, ERP, UI/UX, and development. Open to internship opportunities." />
+  <meta name="theme-color" content="#FF3D1C" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23FF3D1C'>✦</text></svg>" />
+
+  <!-- Font: Anton (display), Playfair Display italic (aksen serif), Space Grotesk (body/label) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@1,500;1,600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-navtext="ink">
+
+  <!-- Lapisan grain/noise di atas segalanya (murni dekoratif) -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Progress scroll -->
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <a class="nav__logo" href="#home">VICKY<span class="nav__dot">✦</span></a>
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+    </nav>
+    <a class="nav__pill" href="#contact">Get in Touch</a>
+  </header>
+
+  <main>
+    <!-- ============ 01 HERO ============ -->
+    <section class="section section--red hero" id="home" data-navtext="ink">
+      <p class="label hero__label" data-reveal>
+        Portfolio ✦ 2026 — Information Systems Student
+      </p>
+
+      <!-- Wordmark: nama dipangkas biar kuat secara visual. Nama lengkap ada di title & footer -->
+      <h1 class="display hero__title" data-reveal data-delay="80">
+        VICKY<br />WINATA
+      </h1>
+
+      <!-- Objek "chrome" mengambang — bisa diganti embed Spline (lihat PANDUAN.md) -->
+      <div class="orb" aria-hidden="true"></div>
+
+      <div class="hero__foot">
+        <p class="hero__tag" data-reveal data-delay="160">
+          Turning business needs into <em>working systems.</em>
+        </p>
+        <p class="hero__desc" data-reveal data-delay="220">
+          I'm Vicky — a 5th-semester Information Systems student at Bina
+          Nusantara University, seeking an internship where I can drive
+          innovative projects and make a real impact in the IT industry.
+        </p>
+        <div class="hero__cta" data-reveal data-delay="300">
+          <a class="btn btn--solid" href="#work">See My Work <span class="btn__ico">↓</span></a>
+          <a class="btn btn--ghost" href="assets/CV-Vicky-Winata-Phan.pdf" download>Download CV</a>
+        </div>
+      </div>
+
+      <span class="num" aria-hidden="true">01</span>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee section--dark" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>System Analyst</span><span class="star">✦</span>
+          <span>ERP</span><span class="star">✦</span>
+          <span>UI / UX</span><span class="star">✦</span>
+          <span>Development</span><span class="star">✦</span>
+          <span>Information Systems</span><span class="star">✦</span>
+        </div>
+        <div class="marquee__group">
+          <span>System Analyst</span><span class="star">✦</span>
+          <span>ERP</span><span class="star">✦</span>
+          <span>UI / UX</span><span class="star">✦</span>
+          <span>Development</span><span class="star">✦</span>
+          <span>Information Systems</span><span class="star">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 02 ABOUT ============ -->
+    <section class="section section--cream profil" id="about" data-navtext="ink">
+      <p class="label" data-reveal>02 — About</p>
+
+      <h2 class="statement" data-reveal data-delay="80">
+        Driving impact through <em>systems</em><br />
+        and <em>innovation.</em>
+      </h2>
+
+      <div class="profil__grid">
+        <!-- Foto profil: crop lingkaran + ring merah. Ganti file assets/vicky.jpg kalau mau foto lain -->
+        <figure class="portrait" data-reveal>
+          <img src="assets/vicky.jpg?v=9" alt="Foto Vicky Winata Phan" loading="lazy" />
+          <span class="portrait__ring" aria-hidden="true"></span>
+          <span class="portrait__star" aria-hidden="true">✦</span>
+        </figure>
+
+        <div class="profil__bio" data-reveal data-delay="80">
+          <p>
+            Hello! I'm Vicky, a passionate 5th-semester Information Systems
+            student with a strong focus on creating innovative solutions.
+            Through academic projects, I've gained experience collaborating
+            with cross-functional teams to deliver high-quality results.
+          </p>
+          <p>
+            I thrive in dynamic environments and am deeply committed to
+            continuous learning and growth. Currently, I'm seeking an
+            internship opportunity where I can contribute my skills to drive
+            innovative projects and make a positive impact in the IT industry.
+          </p>
+        </div>
+        <dl class="profil__stats" data-reveal data-delay="140">
+          <div class="stat"><dt>Years of experience</dt><dd>2+</dd></div>
+          <div class="stat"><dt>Projects completed</dt><dd>5+</dd></div>
+          <div class="stat"><dt>Current semester</dt><dd>05</dd></div>
+        </dl>
+      </div>
+
+      <span class="num" aria-hidden="true">02</span>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section section--dark skills" id="skills" data-navtext="cream">
+      <p class="label" data-reveal>What I work on — Junior Information Systems Analyst</p>
+      <h2 class="h2" data-reveal data-delay="80">SKILLS<span class="h2__star">✦</span></h2>
+
+      <ul class="skills__list">
+        <li class="skill" data-reveal>
+          <span class="skill__num">01</span>
+          <h3 class="skill__name">Systems Analysis</h3>
+          <p class="skill__desc">SRS, UML, BPMN &amp; FSD — turning business processes into system blueprints.</p>
+          <span class="skill__pct">90%</span>
+        </li>
+        <li class="skill" data-reveal data-delay="60">
+          <span class="skill__num">02</span>
+          <h3 class="skill__name">ERP &amp; Business Operations</h3>
+          <p class="skill__desc">Inventory, order tracking &amp; POS workflows for real businesses.</p>
+          <span class="skill__pct">75%</span>
+        </li>
+        <li class="skill" data-reveal data-delay="120">
+          <span class="skill__num">03</span>
+          <h3 class="skill__name">UI / UX Design</h3>
+          <p class="skill__desc">High-fidelity Figma prototypes &amp; branded design systems, mobile-first.</p>
+          <span class="skill__pct">70%</span>
+        </li>
+        <li class="skill" data-reveal data-delay="180">
+          <span class="skill__num">04</span>
+          <h3 class="skill__name">Front-End Development</h3>
+          <p class="skill__desc">React, Tailwind &amp; vanilla JS SPA — responsive and production-deployed.</p>
+          <span class="skill__pct">65%</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ 03 WORK ============ -->
+    <section class="section section--red karya" id="work" data-navtext="ink">
+      <p class="label" data-reveal>03 — Selected work</p>
+      <h2 class="display display--md" data-reveal data-delay="60">WORK</h2>
+
+      <div class="works">
+        <!-- 4 proyek terkuat dari CV. TODO(konten): isi href dengan link
+             GitHub / demo / live — Procurement System sudah di-deploy di VPS. -->
+        <a class="work" href="#" data-reveal>
+          <span class="work__num">01</span>
+          <span class="work__title">Procurement System</span>
+          <span class="work__meta">Full-Stack — 2026</span>
+          <span class="work__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="work" href="#" data-reveal data-delay="60">
+          <span class="work__num">02</span>
+          <span class="work__title">Mille Billiard</span>
+          <span class="work__meta">Web &amp; Mobile — 2025</span>
+          <span class="work__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="work" href="#" data-reveal data-delay="120">
+          <span class="work__num">03</span>
+          <span class="work__title">Maison Mone</span>
+          <span class="work__meta">Front-End UI — 2026</span>
+          <span class="work__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="work" href="#" data-reveal data-delay="180">
+          <span class="work__num">04</span>
+          <span class="work__title">TheSpace</span>
+          <span class="work__meta">System Analysis — 2026</span>
+          <span class="work__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <span class="num" aria-hidden="true">03</span>
+    </section>
+
+    <!-- ============ 04 CONTACT ============ -->
+    <section class="section section--cream kontak" id="contact" data-navtext="ink">
+      <p class="label" data-reveal>04 — Contact</p>
+
+      <h2 class="statement statement--xl" data-reveal data-delay="80">
+        LET'S WORK<br /><em>together.</em>
+      </h2>
+
+      <a class="kontak__mail" href="mailto:vickywinataphan@gmail.com" data-reveal data-delay="140">
+        vickywinataphan@gmail.com <span class="kontak__mail-arrow">↗</span>
+      </a>
+
+      <p class="kontak__info" data-reveal data-delay="170">
+        +62 822-8303-8631 &nbsp;·&nbsp; Jakarta Barat, Jakarta, Indonesia
+      </p>
+
+      <!-- Semua link sosial sudah asli.
+           Catatan: akun GitHub belum punya repo publik — kalau repo proyek
+           (Procurement System dkk.) sudah di-publish, isi juga href di section Work. -->
+      <ul class="kontak__socials" data-reveal data-delay="200">
+        <li><a href="https://wa.me/6282283038631" target="_blank" rel="noopener">WhatsApp ↗</a></li>
+        <li><a href="https://www.linkedin.com/in/vicky-winata-226a773b7/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://github.com/exolonebanhh" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://www.instagram.com/vickywinataphan/" target="_blank" rel="noopener">Instagram ↗</a></li>
+      </ul>
+
+      <footer class="footer">
+        <span>© <span data-year>2026</span> Vicky Winata Phan</span>
+        <span>Jakarta Barat — <span data-time>--:--</span></span>
+        <a href="#home" class="footer__top">Back to top ↑</a>
+      </footer>
+
+      <span class="num" aria-hidden="true">04</span>
+    </section>
+  </main>
+
+  <!-- Tab progres (desktop) -->
+  <nav class="tabs" aria-label="Page position">
+    <a href="#home"><i>01</i>Home</a>
+    <a href="#about"><i>02</i>About</a>
+    <a href="#work"><i>03</i>Work</a>
+    <a href="#contact"><i>04</i>Contact</a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>

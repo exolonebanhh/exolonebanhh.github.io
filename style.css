@@ -313,15 +313,22 @@ body[data-navtext="cream"] .nav { color: var(--cream); }
 
 /* ---------- orb "chrome" ---------- */
 
-.orb {
+.orb-wrap {
   position: absolute;
   z-index: 2;
   right: clamp(2rem, 12vw, 14rem);
   top: 50%;
   width: clamp(9rem, 20vw, 17rem);
   aspect-ratio: 1.35 / 1;
+  translate: 0 -58%;
+  will-change: transform;
+}
+
+.orb {
+  position: relative;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  transform: translateY(-58%) rotate(-14deg);
   background:
     radial-gradient(circle at 28% 22%, rgba(255,255,255,.95), rgba(255,255,255,0) 26%),
     radial-gradient(circle at 72% 80%, rgba(255,61,28,.35), rgba(255,61,28,0) 42%),
@@ -350,8 +357,48 @@ body[data-navtext="cream"] .nav { color: var(--cream); }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(-58%) rotate(-14deg); }
-  50%      { transform: translateY(-50%) rotate(-6deg); }
+  0%, 100% { transform: rotate(-14deg) translateY(-3%); }
+  50%      { transform: rotate(-6deg) translateY(3%); }
+}
+
+/* judul hero: tiap baris naik dari bawah saat halaman dibuka */
+.hero__title .line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: .04em;
+}
+
+.hero__title .line-inner {
+  display: block;
+  transform: translateY(115%);
+  animation: rise 1s cubic-bezier(.19, 1, .22, 1) forwards;
+}
+
+.hero__title .line:nth-child(2) .line-inner { animation-delay: .14s; }
+
+@keyframes rise {
+  to { transform: translateY(0); }
+}
+
+/* ---------- custom cursor (desktop, efek dari effects.js) ---------- */
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 80;
+  pointer-events: none;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  opacity: 0;
+}
+
+.cursor-dot { width: 8px; height: 8px; background: #fff; }
+
+.cursor-ring {
+  width: 38px; height: 38px;
+  border: 1.5px solid #fff;
+  transition: width .25s ease, height .25s ease;
 }
 
 /* ---------- marquee ---------- */
@@ -728,7 +775,7 @@ body[data-navtext="cream"] .nav { color: var(--cream); }
 
 @media (max-width: 720px) {
   .tabs { display: none; }
-  .orb { right: -8%; top: 34%; width: 9.5rem; }
+  .orb-wrap { right: -8%; top: 34%; width: 9.5rem; }
   .num { display: none; }
   .hero__foot { flex-direction: column; align-items: flex-start; }
 }
@@ -738,6 +785,7 @@ body[data-navtext="cream"] .nav { color: var(--cream); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .marquee__track, .orb, .h2__star, .grain { animation: none; }
+  .hero__title .line-inner { animation: none; transform: none; }
   [data-reveal] {
     opacity: 1;
     transform: none;

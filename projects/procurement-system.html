@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Procurement System — Vicky Winata Phan</title>
-  <meta name="description" content="Full-stack enterprise procurement application — security audit, hardening, and production deployment. Flask, PostgreSQL, JWT, Nginx, DigitalOcean VPS." />
+  <meta name="description" content="Acai Procurement System — full-stack Flask + PostgreSQL procurement platform. Security audit, 172 REST endpoints, testing suite, and production deployment on DigitalOcean VPS." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23FF3D1C'>✦</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,11 +24,11 @@
     <section class="section section--red doc-hero">
       <p class="label">01 ✦ Full-Stack Web Application ✦ 2026</p>
       <h1 class="display display--md">Procurement<br />System</h1>
-      <p class="doc-tag">An enterprise procurement workflow — <em>audited, hardened, and deployed to production.</em></p>
+      <p class="doc-tag">Acai Procurement System v2.1.3 — <em>audited, hardened, and deployed to production.</em></p>
       <div class="doc-meta">
         <span>Role — Developer</span>
         <span>Year — 2026</span>
-        <span>Status — Deployed</span>
+        <span>Status — Live on VPS</span>
       </div>
       <span class="num" aria-hidden="true">01</span>
     </section>
@@ -36,12 +36,30 @@
     <section class="section section--cream doc-body">
       <h2>Overview</h2>
       <p>
-        An end-to-end enterprise procurement application covering the complete
-        purchasing cycle — Purchase Requests, approvals, Purchase Orders,
-        receiving and QC, through invoicing. The application supports
-        4 user roles (Admin, Manager, Staff, and Viewer), serves content in
-        3 languages, and runs on a hardened production stack.
+        The Acai Procurement System is a procurement platform built for a
+        sourcing business that buys products from suppliers on behalf of
+        customers. It covers the complete commercial cycle — customers,
+        products with variants, suppliers, procurement plans, purchase
+        orders, receiving, returns, and invoicing — wrapped in a dashboard
+        that surfaces balances, debts, and pending work at a glance.
       </p>
+      <p>
+        Backend: Python Flask · Database: PostgreSQL · Frontend: vanilla
+        JavaScript SPA. Current release v2.1.3.
+      </p>
+
+      <h2>Nine Functional Modules</h2>
+      <ul class="doc-list">
+        <li>Customers — auto-generated codes (AC0001…), balance top-ups, full transaction history.</li>
+        <li>Products — SKU generation, multi-spec variants (color, size), archiving and restore.</li>
+        <li>Suppliers — finance (credit limits, payment terms, deposit ratios), quality &amp; compliance, logistics, relationship data, and a built-in debt ledger.</li>
+        <li>Procurement plans with a submit → approve → execute workflow.</li>
+        <li>Purchase orders — multi-supplier orders, payment recording with receipt uploads, and logistics tracking.</li>
+        <li>Receiving — smart quantity balancing (received + short + damaged must reconcile), quality inspection, and automatic return generation when goods go missing or arrive damaged.</li>
+        <li>Returns — categorized by reason, automatically posted into the supplier debt ledger.</li>
+        <li>Invoices — multi-PO linking with automatic subtotal, discount, tax, markup, and commission calculations.</li>
+        <li>Dashboard — stat cards, recent plans, customer balance ranking, and supplier debt overview.</li>
+      </ul>
 
       <h2>Security Audit &amp; Hardening</h2>
       <p>
@@ -50,26 +68,33 @@
         (<code>before_request</code>) and role-based access control across all
         four roles.
       </p>
+      <ul class="doc-list">
+        <li>Full security scan performed: 200+ database queries verified as safely parameterized — SQL injection and XSS checks passed.</li>
+        <li>File upload security: restricted file types, <code>secure_filename()</code> validation, timestamped storage.</li>
+        <li>JWT secret persisted to file — fixed login breakage in Chrome Incognito across Chrome, Edge, Safari, and Firefox.</li>
+        <li>CSRF accepted as documented risk for the API-first design.</li>
+      </ul>
 
-      <h2>Core Workflow &amp; Database</h2>
+      <h2>Workflow &amp; Database</h2>
       <ul class="doc-list">
         <li>Built an auditable approval workflow with approver identity and timestamp logging, mandatory rejection reasons, and immutable statuses.</li>
         <li>Resolved legacy PostgreSQL schema issues through idempotent SQL migrations, restoring the end-to-end workflow from PR to invoice.</li>
         <li>172 REST API endpoints · 36 PostgreSQL tables.</li>
       </ul>
 
-      <h2>Testing &amp; Deployment</h2>
+      <h2>Testing</h2>
       <ul class="doc-list">
-        <li>Established a staging-to-production deployment pipeline featuring automated backups, schema migrations, and checksum verification.</li>
-        <li>Validated the application with an automated API test suite — 33 assertions passing at 100%, along with browser DOM verification.</li>
-        <li>Systematically diagnosed and resolved a production DNS outage on Cloudflare.</li>
+        <li>Automated API test suite — 33 assertions passing at 100%, along with browser DOM verification.</li>
+        <li>Regression suite of 52 tests (48 passing) covering core modules and the multi-browser login matrix.</li>
       </ul>
 
-      <h2>Localization</h2>
-      <p>
-        Translated approximately 3,000 lines of mixed Chinese-language UI into
-        English using a custom phrase-dictionary pipeline.
-      </p>
+      <h2>Deployment &amp; Operations</h2>
+      <ul class="doc-list">
+        <li>Staging-to-production deployment pipeline with automated backups, schema migrations, and checksum verification.</li>
+        <li>Deployed on a DigitalOcean VPS (Ubuntu) behind Nginx + Gunicorn, with one-command production scripts (<code>setup_vps.py</code>, <code>run_production.sh</code>).</li>
+        <li>Translated approximately 3,000 lines of mixed Chinese-language UI into English using a custom phrase-dictionary pipeline.</li>
+        <li>Systematically diagnosed and resolved a production DNS outage on Cloudflare.</li>
+      </ul>
 
       <h2>Tech Stack</h2>
       <div class="chips">

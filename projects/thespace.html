@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TheSpace — Vicky Winata Phan</title>
-  <meta name="description" content="System analysis for TheSpace, a smart workspace and cafe rental platform — SRS, UML, BPMN, payment gateway integration, and Smart Building concepts." />
+  <meta name="description" content="TheSpace — business case & system analysis for a smart workspace rental and cafe ordering platform. Budgeting, WBS, product backlog across 5 roles, and risk analysis." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23FF3D1C'>✦</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,13 +22,13 @@
 
   <main>
     <section class="section section--dark doc-hero">
-      <p class="label">04 ✦ System Analysis ✦ 2026</p>
+      <p class="label">04 ✦ System Analysis ✦ Business Case &amp; Product Backlog</p>
       <h1 class="display display--md">The<br />Space</h1>
-      <p class="doc-tag">A smart workspace &amp; cafe rental platform — <em>analyzed before a single line was written.</em></p>
+      <p class="doc-tag">A smart workspace &amp; cafe rental platform — <em>analyzed, budgeted, and chartered before a single line was written.</em></p>
       <div class="doc-meta">
         <span>Role — System Analyst</span>
-        <span>Year — 2026</span>
-        <span>Course — ISPM</span>
+        <span>Timeline — Sep 2024 – Mar 2025</span>
+        <span>Focus — Business Case &amp; Backlog</span>
       </div>
       <span class="num" aria-hidden="true">04</span>
     </section>
@@ -36,24 +36,76 @@
     <section class="section section--cream doc-body">
       <h2>Overview</h2>
       <p>
-        Served as System Analyst for TheSpace, a smart workspace and cafe
-        rental platform — designing a system architecture to digitize
-        workspace/office reservations and food orders previously handled in
-        person or by phone.
+        TheSpace rents meeting rooms and offices by the hour, day, week,
+        month, or year — and runs TheSpaceCafe, open to the public, with
+        pickup orders and delivery throughout the building. As System Analyst
+        I authored the full business case and product backlog that defined
+        what the platform would be before development began.
       </p>
 
-      <h2>Requirements Engineering</h2>
+      <h2>The Business Case</h2>
+      <p>
+        The current process was double friction: employees ordered cafe food
+        by phone — leading to confusion and delays for staff — while
+        customers had to physically visit the office to rent rooms. Three
+        options were analyzed: keep the traditional process, build a booking
+        app, or build an <strong>integrated booking + food ordering
+        platform</strong>. The third option was recommended — a single app
+        that takes bookings, tracks available and occupied rooms, records
+        every transaction, and lifts cafe income at the same time.
+      </p>
+      <p>
+        Users fill in their organization name, rent time and date, and room
+        type, continue to payment, and the room is ready. Food and drinks are
+        ordered in the same app and delivered straight to the room they are
+        renting.
+      </p>
+
+      <h2>Product Backlog — 5 Roles</h2>
       <ul class="doc-list">
-        <li>Prepared a System Requirements Specification (SRS), UML diagrams, and BPMN to define system requirements.</li>
-        <li>Designed flexible rental periods by hour, day, week, month, or year.</li>
-        <li>Covered food ordering and delivery throughout the building.</li>
+        <li>Administrator — room check-ins, room status, and end-of-month reservation reports for analysis.</li>
+        <li>User — sign up, log in, rent a meeting room, and order food delivered to the rented room; switch between accounts.</li>
+        <li>Manager — transaction reports in full detail to monitor users, activity, and properly recorded transactions.</li>
+        <li>Cafe cashier — order queue for preparation, order type (pickup/delivery), and daily order reports.</li>
+        <li>Owner — full control of system, employees, and business; problem resolution and continuous service upgrades.</li>
       </ul>
 
-      <h2>System Design</h2>
+      <h2>The Numbers</h2>
       <ul class="doc-list">
-        <li>Real-time room availability and occupancy monitoring.</li>
-        <li>Payment gateway integration and transaction history records to support centralized reservation and transaction management.</li>
-        <li>Smart Building concepts and transaction workflow automation to reduce the potential for ordering errors.</li>
+        <li>Initial setup budget: $235,000 — real estate ($100k), renovation &amp; furnishing ($50k), technology setup ($30k), kitchen &amp; cafe equipment ($25k), legal, marketing, and licences.</li>
+        <li>Projected monthly revenue: $20,750 — room rentals ($10,000), five long-term offices ($2,750), and TheSpaceCafe sales ($8,000).</li>
+        <li>Monthly operating expenses: $6,800 (≈ $81,600/year) — utilities, staffing, maintenance, and subscriptions.</li>
+        <li>Timeline: 6-month delivery target, with a minimum useful life of 3 years and a break-even target of 2 years.</li>
+      </ul>
+
+      <div class="doc-outcome">
+        <strong>$235,000</strong> initial budget, <strong>$20,750</strong>
+        projected monthly revenue, <strong>5 roles</strong> in the backlog, and a
+        <strong>6-month</strong> schedule — the paperwork that made the build
+        possible was its own deliverable.
+      </div>
+
+      <h2>Work Breakdown Structure</h2>
+      <ul class="doc-list">
+        <li>Project management — scope, timeline, budget, risks, and stakeholders.</li>
+        <li>Requirements gathering — room booking and food ordering user requirements; system features and functionality.</li>
+        <li>Design — booking UI, ordering UI, and system architecture (backend, database, APIs).</li>
+        <li>Development — booking by duration, pickup &amp; delivery ordering, availability tracking, payment and transaction tracking, user/bookings/orders database.</li>
+        <li>Testing — booking functionality, ordering functionality, payment tracking, and user acceptance testing.</li>
+      </ul>
+
+      <h2>Risks Identified</h2>
+      <ul class="doc-list">
+        <li>Adoption risk — existing customers may resist migrating from the traditional booking process.</li>
+        <li>Technical risk — double bookings, payment failures, or bookings not going through.</li>
+        <li>Investment risk — significant time and budget spent without a proportional income increase.</li>
+      </ul>
+
+      <h2>Strategic Goals Covered</h2>
+      <ul class="doc-list">
+        <li>Financial stability &amp; growth — cost management and long-term financial planning.</li>
+        <li>Community engagement &amp; brand building — tenant networking events and market positioning.</li>
+        <li>Operational efficiency — Smart Building technology and IoT-based facility monitoring.</li>
       </ul>
     </section>
 
@@ -64,7 +116,7 @@
       </a>
       <a href="procurement-system.html">
         <span class="label">Start from project 01 →</span>
-        <span class="doc-next-title">Procurement <em>System</em></span>
+        <span class="doc-next-title">Procura</span>
       </a>
     </section>
   </main>
